@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Login from "./pages/login";
 import Project from "./pages/project";
 import Task from "./pages/task";
@@ -9,7 +9,8 @@ import Dashboard from "./pages/dashboard";
 import Settings from "./pages/settings";
 import Calander from "./pages/calander";
 import Client from "./pages/client";
-import { useState } from "react";
+import Register from "./pages/register";
+
 
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
   <Route path ="/client"  element = {<Client/>} />
   <Route path ="/dashboard"  element = {<Dashboard/>} />
   <Route path ="/calander"  element = {<Calander/>} />
+  
   <Route path ="/settings"  element = {<Settings/>} />
-     
+  <Route path="/register" element={<Register/>} />   
   </Routes>
   
   </BrowserRouter>

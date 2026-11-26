@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 function Login(){
     
         
             
-        
+     const navigate = useNavigate();   
      const[formdata,setFormdata] = useState({
 
      username :"",
      password :"" });
 
-   function handlesubmit (e){
+   function handlesubmit(e){
     e.preventDefault();
     alert("login success");
     navigate("/dashboard",{
@@ -34,9 +35,6 @@ function Login(){
     <input type="password" placeholder="you password " required name ="password" onChange={handlechange} />
     <button type="submit" >submit</button>
     
-
-
-
 
   </form>
       
