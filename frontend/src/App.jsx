@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard";
 import Settings from "./pages/settings";
 import Calander from "./pages/calander";
 import Client from "./pages/client";
+import { useState } from "react";
 
 
 function App() {
@@ -26,13 +27,17 @@ function App() {
   <Route path ="/calander"  element = {<Calander/>} />
   <Route path ="/settings"  element = {<Settings/>} />
      
-  <div>   sample </div>
-
   </Routes>
   
   </BrowserRouter>
-  );
 
+  
+  
+ 
+
+
+  );
+  
 
   
 }

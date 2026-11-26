@@ -1,10 +1,44 @@
 import { useState } from "react";
+import { navigate } from "react-router-dom";
+
 function Login(){
-    return(
+    
         
-        <div>sample project </div>
-       
+            
         
+     const[formdata,setFormdata] = useState({
+
+     username :"",
+     password :"" });
+
+   function handlesubmit (e){
+    e.preventDefault();
+    alert("login success");
+    navigate("/dashboard",{
+        state:formdata,
+    });
+   }
+
+    function handlechange(e) {
+      e.preventDefault();
+      setFormdata({
+        ...formdata,
+        [e.target.name]:e.target.value,
+      });
+    }
+    
+   
+  return(
+  <form onSubmit={handlesubmit} >
+    <input type="text" placeholder="you name " required name ="username" onChange={handlechange}/>
+    <input type="password" placeholder="you password " required name ="password" onChange={handlechange} />
+    <button type="submit" >submit</button>
+    
+
+
+
+
+  </form>
       
    );
 
@@ -12,24 +46,6 @@ function Login(){
 }
 export default Login;
 
- {/* <div className="text-blue-500 text-3xl font-bold text-center mt-10">
-        hiiii.......
-
-     <input type="email" required placeholder="Enter your email" name="email" value={email} onChange={(e) => { console.log(e.target.value); setEmail(e.target.value); }} />
-       <input type="password" required placeholder="Enter your password" name="password" value={password} onChange={(e) => { console.log(e.target.value); setPassword(e.target.value); }} />
-      <button type="submit" onClick={handleSubmit} > Submit</button>  
-        
 
 
 
-
-      </div>
-      <div>
-      <form onClick={handleSubmit} required >
-       <input type="email" required placeholder="Enter your email" name="email" value={email} onChange={(e) => { console.log(e.target.value); setEmail(e.target.value); }} />
-       <input type="password" required placeholder="Enter your password" name="password" value={password} onChange={(e) => { console.log(e.target.value); setPassword(e.target.value); }} />
-      <button type="submit" >Submit</button>  
-      <p name = "email" ></p>
-      </form>
-      </div>
-      */}
