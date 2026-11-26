@@ -2,9 +2,9 @@ import { useState } from "react";
 function Login(){
     return(
         
-        <div>sample </div>
+        <div>sample project </div>
        
-    
+        
       
    );
 
