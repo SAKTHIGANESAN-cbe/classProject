@@ -1,10 +1,11 @@
-import { useFormAction, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { registerschema } from "../component/FormSchema/registerscheme";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 function Register() {
      const naviagte = useNavigate();
-     const {register,handleSubmit,formState:{errors}} = useFormAction({
+     const {register,handleSubmit,formState:{errors}} = useForm({
      resolver :zodResolver(registerschema)
 
      })
