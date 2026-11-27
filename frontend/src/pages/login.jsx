@@ -35,11 +35,13 @@ function Login(){
     
    
   return(
-    <div className="">
-      <h1>login page</h1>
-  <form onSubmit={handlesubmit} className="bg-blue-900 text-green-200 rounded-lg flex flex-col item-center justify-center text-center  mt-50 pt-1 mx-30" >
-    <input type="text" placeholder="you name " required name ="username"  className="flex item-center justify-center rounded-lg border-3 m-2"  onChange={handlechange}/>
-    <input type="password" placeholder="you password " required name ="password" className="flex item-center justify-center rounded-lg border-3 m-2" onChange={handlechange} />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-100 px-4">
+      
+  <form onSubmit={handlesubmit} className="bg-blue-900  rounded-lg flex flex-col items-center justify-center p-3 gap-2" >
+     <h1>Login page</h1>
+   
+    <input type="text" placeholder="you name " required name ="username" className="w-full px-3 py-1.5 rounded-lg border-2 text-slate-900 bg-white"  onChange={handlechange}/>
+    <input type="password" placeholder="you password " required name ="password" className="w-full px-3 py-1.5 rounded-lg border-2 text-slate-900 bg-white" onChange={handlechange} />
     <button type="submit"  className="flex item-center justify-center rounded-lg border-3 bg-red-800  m-2">submit</button>
     
 
