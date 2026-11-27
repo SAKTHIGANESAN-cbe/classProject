@@ -1,43 +1,50 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 function Login(){
     
         
-            
+     const location = useLocation();  
      const navigate = useNavigate();   
-     const[formdata,setFormdata] = useState({
+     const[logindata,setLogindata] = useState({
 
      username :"",
      password :"" });
 
    function handlesubmit(e){
     e.preventDefault();
-    alert("login success");
-    navigate("/dashboard",{
-        state:formdata,
-    });
+    const registerdata = location.state;
+    console.log("login page ... ",logindata);
+    if(logindata.username===registerdata?.name && logindata.password===registerdata?.password){
+      console.log(" print success...")
+      navigate("/dashboard",{
+        state:logindata
+      });
+      
+    }
    }
 
     function handlechange(e) {
       e.preventDefault();
-      setFormdata({
-        ...formdata,
+      setLogindata({
+        ...logindata,
         [e.target.name]:e.target.value,
       });
     }
     
    
   return(
-  <form onSubmit={handlesubmit} >
-    <input type="text" placeholder="you name " required name ="username" onChange={handlechange}/>
-    <input type="password" placeholder="you password " required name ="password" onChange={handlechange} />
-    <button type="submit" >submit</button>
+    <div className="">
+      <h1>login page</h1>
+  <form onSubmit={handlesubmit} className="bg-blue-900 text-green-200 rounded-lg flex flex-col item-center justify-center text-center  mt-50 pt-1 mx-30" >
+    <input type="text" placeholder="you name " required name ="username"  className="flex item-center justify-center rounded-lg border-3 m-2"  onChange={handlechange}/>
+    <input type="password" placeholder="you password " required name ="password" className="flex item-center justify-center rounded-lg border-3 m-2" onChange={handlechange} />
+    <button type="submit"  className="flex item-center justify-center rounded-lg border-3 bg-red-800  m-2">submit</button>
     
 
   </form>
-      
+      </div>
    );
 
 
