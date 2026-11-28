@@ -13,7 +13,7 @@ function Register() {
     function OnSubmit1(data){
         console.log(data);
         alert("register successs  .....");
-        naviagte("/",{
+        naviagte("/login",{
             state:data,
         })
 }

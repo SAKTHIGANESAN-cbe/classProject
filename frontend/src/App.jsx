@@ -25,7 +25,8 @@ function App() {
   return (
   <BrowserRouter>
   <Routes>
-  <Route path="/" element = {<Login/>} />
+  <Route path="/login"  element={<Login/>} />
+  <Route path="/" element = {<Register/>} />
   <Route path="/project" element ={<Project/>} />
   <Route path ="/task"  element = {<Task/>} />
 
@@ -33,7 +34,7 @@ function App() {
   <Route path ="/client"  element = {<Client/>} />
   <Route path ="/dashboard"  element = {<Dashboard/>} />
   <Route path ="/calander"  element = {<Calander/>} />
-  <Route path="/registers"  element={<Register/>} />
+
   <Route path ="/settings"  element = {<Settings/>} />
 
      <Route path="/admin" element={<Admin/>}>
