@@ -46,7 +46,7 @@ function Login(){
     <input type="text" placeholder="you name " required name ="username" className="w-full px-3 py-1.5 rounded-lg border-2 text-slate-900 bg-white"  onChange={handlechange}/>
     <input type="password" placeholder="you password " required name ="password" className="w-full px-3 py-1.5 rounded-lg border-2 text-slate-900 bg-white" onChange={handlechange} />
     <button type="submit"  className="flex item-center justify-center rounded-lg border-3 bg-red-800  m-2">submit</button>
-    
+    <div>   </div>
 
   </form>
       </div>
